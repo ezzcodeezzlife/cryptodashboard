@@ -51,30 +51,8 @@ var coinsToQuery = [
   "Filecoin",
 ];
 
-
-
-
-
 ("/:coin", async function (req, res, next) {
   console.log(req.params.coin);
-
-  var coinsToQuery = [
-    "bitcoin",
-    "dogecoin",
-    "monero",
-    "ethereum",
-    "Tether",
-    "Cardano",
-    "Binance",
-    "Ripple",
-    "Solana",
-    "Polkadot",
-    "Avalanche",
-    "Uniswap",
-    "Litecoin",
-    "Algorand",
-    "Filecoin",
-  ];
 
   if (coinsToQuery.includes(req.params.coin)) {
     var articlesFromDatabase = await ArticleSchema.find({
@@ -149,14 +127,14 @@ var coinsToQuery = [
     console.log(scorearray.reverse());
     //console.log(sortedarray)
     /*
-  avarageArray.sort(function(a, b) {
-    return a - b;
-  });
-  console.log(avarageArray);
+    avarageArray.sort(function(a, b) {
+      return a - b;
+    });
+    console.log(avarageArray);
 
-  const firstNegative = avarageArray[0];
-  console.log("firstpos "+firstPositive);
-*/
+    const firstNegative = avarageArray[0];
+    console.log("firstpos "+firstPositive);
+    */
     const arrAvg = (arr) => arr.reduce((a, b) => a + b, 0) / arr.length;
 
     console.log("avg" + arrAvg(avarageArray));
@@ -192,13 +170,8 @@ var coinsToQuery = [
 
 app.post("/search/", async function (req, res, next) {
   //console.log(req.body.userinput);
-
   res.redirect("/" + req.body.userinput);
 });
-
-
-
-
 
 ("/", async function (req, res, next) {
   res.redirect("/news/article");
@@ -208,55 +181,6 @@ app.get("/news/article", async function (req, res, next) {
   res.render("news", { coinsToQuery: coinsToQuery.sort() });
 });
 
-/*
-app.get('/', async function(req, res, next) {
-  var dataa = await dbBench.find({}).exec(); //find all entrys
-  res.render('index',{ data: JSON.stringify(dataa) } );
-});
-
-app.get('/add', async function(req, res, next) {
-  var dataa = await dbBench.find({}).exec(); //find all entrys
-
-  res.render('add', { data: JSON.stringify(dataa) } );
-});
-
-app.post('/add', async function(req, res, next) {
-  console.log(req.body.lat);
-  console.log(req.body.long);
-  console.log(req.body.beschreibung);
-  console.log(req.body.nickname);
-
-  if(req.body.nickname == ""){
-    req.body.nickname = "unknown";
-  }
-  dbBench.create({
-    lat: req.body.lat,
-    long: req.body.long,
-    beschreibung: req.body.beschreibung,
-    nickname: req.body.nickname,
-  }); console.log("Successful creation of new entry");
-
-  res.render('thanks');
-});
-
-
-app.get('/leaderboard', async function(req, res, next) {
-  var all = await dbBench.aggregate([
-    { $group: { _id: "$nickname", count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
-  ])
-  console.log(all);
-  
-  res.render('leaderboard', { tabledata: all } );
-});
-
-
-app.get('/fullscreenmap', async function(req, res, next) {
-  var dataa = await dbBench.find({}).exec(); //find all entrys
-  
-  res.render('fullscreenmap',  { data: JSON.stringify(dataa) } );
-});
-*/
 
 app.listen(process.env.PORT || 5000, () => {
   console.log(`App listening at http://localhost:${port}`);
