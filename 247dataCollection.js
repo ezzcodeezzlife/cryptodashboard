@@ -44,7 +44,7 @@ cron.schedule("0 */12 * * *", function () {
     request(
       "https://newsapi.org/v2/everything?q=" +
         query +
-        "&from=2021-10-05&sortBy=publishedAt&apiKey=99e0a262cfe44dc4a105d5c2c1137fcb",
+        "&from=2021-10-05&sortBy=publishedAt&apiKey=" + process.env.APIKEY,
       function (error, response, body) {
         if (!error && response.statusCode === 200) {
           JSON.parse(body).articles.forEach(function (obj) {
