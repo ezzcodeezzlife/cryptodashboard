@@ -51,7 +51,11 @@ var coinsToQuery = [
   "Filecoin",
 ];
 
-app.get("/:coin", async function (req, res, next) {
+
+
+
+
+("/:coin", async function (req, res, next) {
   console.log(req.params.coin);
 
   var coinsToQuery = [
@@ -192,7 +196,11 @@ app.post("/search/", async function (req, res, next) {
   res.redirect("/" + req.body.userinput);
 });
 
-app.get("/", async function (req, res, next) {
+
+
+
+
+("/", async function (req, res, next) {
   res.redirect("/news/article");
 });
 
