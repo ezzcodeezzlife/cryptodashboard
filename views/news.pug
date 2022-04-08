@@ -1,0 +1,162 @@
+doctype html
+// https://codyhouse.co/license
+head
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  script.
+    document.getElementsByTagName("html")[0].className += " js";
+  link(rel='stylesheet' href='../assets/css/style.css')
+  link(rel='e' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  script(src='https://cdn.plot.ly/plotly-2.4.2.min.js')
+
+  script(src='https://www.cryptohopper.com/widgets/js/script')
+
+  // Bootrap
+  title crypto rate
+  style.
+  
+    #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius:6px;
+    }
+    #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    #customers tr:hover {background-color: #ddd;}
+    #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: hsl(203deg 79% 44%);
+    color: white;
+    }
+header.cd-main-header.js-cd-main-header
+  .cd-logo-wrapper
+    a.cd-logo(href='#0')
+      img(src='../assets/img/cd-logo.svg' alt='Logo')
+  .cd-search.js-cd-search
+    form(action="/search" method="POST")
+      input.reset(name="userinput" type='search' placeholder='Search...')
+  button.reset.cd-nav-trigger.js-cd-nav-trigger(aria-label='Toggle menu')
+    span
+  ul.cd-nav__list.js-cd-nav__list
+    //li.cd-nav__item
+      a(href='#0') Tour
+    //li.cd-nav__item
+      a(href='#0') Support
+    //li.cd-nav__item.cd-nav__item--has-children.cd-nav__item--account.js-cd-item--has-children
+      a(href='#0')
+        img(src='assets/img/cd-avatar.svg' alt='avatar')
+        span Legal Stuff
+      ul.cd-nav__sub-list
+        li.cd-nav__sub-item
+          a(href='#0') Agrrement
+        li.cd-nav__sub-item
+          a(href='#0') Data privacy
+        li.cd-nav__sub-item
+          a(href='#0') Contact
+// .cd-main-header
+main.cd-main-content
+  nav.cd-side-nav.js-cd-side-nav
+    ul.cd-side__list.js-cd-side__list
+      li.cd-side__label
+        span Main
+      li.cd-side__item.cd-side__item--has-children.cd-side__item--overview.js-cd-item--has-children
+        a(href='/news/article') Home
+        ul.cd-side__sub-list
+          li.cd-side__sub-item
+            a(href='/news/article') News
+          //li.cd-side__sub-item
+            a(href='#0') Coin12
+         
+      li.cd-side__item.cd-side__item--has-children.cd-side__item--notifications.cd-side__item--selected.js-cd-item--has-children
+        a(href='#0')
+          | All Coins
+          span.cd-count 16
+        ul.cd-side__sub-list
+          each entry in coinsToQuery
+            li.cd-side__sub-item
+              a( href='/'+entry )= entry.toUpperCase()
+          
+
+
+      //li.cd-side__item.cd-side__item--has-children.cd-side__item--comments.js-cd-item--has-children
+        a(href='#0') Comments
+        ul.cd-side__sub-list
+          li.cd-side__sub-item
+            a(href='#0') All Comments
+          li.cd-side__sub-item
+            a(href='#0') Edit Comment
+          li.cd-side__sub-item
+            a(href='#0') Delete Comment
+    //ul.cd-side__list.js-cd-side__list
+      li.cd-side__label
+        span  News
+      li.cd-side__item.cd-side__item--has-children.cd-side__item--bookmarks.js-cd-item--has-children
+        a(href='/news/article') All News
+        ul.cd-side__sub-list
+          li.cd-side__sub-item
+            a(href='/news/article') Most Polular
+
+    ul.cd-side__list.js-cd-side__list
+      li.cd-side__label
+        span Check out more:
+      li.cd-side__btn
+        button( onclick="location.href='https://homepage-appsplosion.herokuapp.com/'") Appsplosion.com
+  div(style='background-color: #e2e2e2;  margin-left: auto;margin-right: auto; ')
+    <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #e2e2e2; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #e2e2e2;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">by Coinlib</a></div></div>
+        div(style='background-color: #e2e2e2; width:90%; margin-left: auto; margin-right: auto; margin-top: 1vw;')
+            <div class="cryptohopper-web-widget" data-id="5" data-news_count="100"></div>
+    #ebxxx.powr-comments
+    script(src='https://www.powr.io/powr.js?platform=html')
+
+
+script.
+ timestamps = JSON.parse('!{timestampArray}');
+ scorearray = JSON.parse('!{scoreArray}');
+ titlearray = JSON.parse('!{titlearray}');
+
+  console.log(timestamps)
+  var trace = {
+    name: 'Avarage',
+    x: timestamps,
+    y: scorearray,
+    mode: 'lines',
+    text: titlearray,
+    line: {shape: 'spline'},
+  };
+
+
+  var dottrace = {
+  x: timestamps,
+  y: scorearray,
+  mode: 'markers',
+  name: 'Events',
+  text: titlearray,
+  };
+
+  var data = [ trace , dottrace];
+
+  var layout = {
+    title:'Analyis Score over time',
+    plot_bgcolor:"#e2e2e2",
+    paper_bgcolor:"#e2e2e2",
+    autosize: true,
+    height: 300,
+  };
+
+  Plotly.newPlot('myDiv', data, layout);
+
+
+script(src='../assets/js/util.js')
+// util functions included in the CodyHouse framework
+script(src='../assets/js/menu-aim.js')
+script(src='../assets/js/main.js')

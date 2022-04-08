@@ -1,0 +1,286 @@
+doctype html
+// https://codyhouse.co/license
+head
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  script.
+    document.getElementsByTagName("html")[0].className += " js";
+  link(rel='stylesheet' href='assets/css/style.css')
+  link(rel='e' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  script(src='https://cdn.plot.ly/plotly-2.4.2.min.js')
+
+  script(src='https://www.cryptohopper.com/widgets/js/script')
+
+  // Bootrap
+  title crypto rate
+  style.
+  
+    #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius:6px;
+    }
+    #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    #customers tr:hover {background-color: #ddd;}
+    #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: hsl(203deg 79% 44%);
+    color: white;
+    }
+header.cd-main-header.js-cd-main-header
+  .cd-logo-wrapper
+    a.cd-logo(href='#0')
+      img(src='assets/img/cd-logo.svg' alt='Logo')
+  .cd-search.js-cd-search
+    form(action="/search" method="POST")
+      input.reset(name="userinput" type='search' placeholder='Search...')
+  button.reset.cd-nav-trigger.js-cd-nav-trigger(aria-label='Toggle menu')
+    span
+  ul.cd-nav__list.js-cd-nav__list
+    //li.cd-nav__item
+      a(href='#0') Tour
+    //li.cd-nav__item
+      a(href='#0') Support
+    //li.cd-nav__item.cd-nav__item--has-children.cd-nav__item--account.js-cd-item--has-children
+      a(href='#0')
+        img(src='assets/img/cd-avatar.svg' alt='avatar')
+        span Legal Stuff
+      ul.cd-nav__sub-list
+        li.cd-nav__sub-item
+          a(href='#0') Agrrement
+        li.cd-nav__sub-item
+          a(href='#0') Data privacy
+        li.cd-nav__sub-item
+          a(href='#0') Contact
+// .cd-main-header
+main.cd-main-content
+  nav.cd-side-nav.js-cd-side-nav
+    ul.cd-side__list.js-cd-side__list
+      li.cd-side__label
+        span Main
+      li.cd-side__item.cd-side__item--has-children.cd-side__item--overview.js-cd-item--has-children
+        a(href='/news/article') Home
+        ul.cd-side__sub-list
+          li.cd-side__sub-item
+            a(href='/news/article') News
+          //li.cd-side__sub-item
+            a(href='#0') Coin12
+         
+      li.cd-side__item.cd-side__item--has-children.cd-side__item--notifications.cd-side__item--selected.js-cd-item--has-children
+        a(href='#0')
+          | All Coins
+          span.cd-count 16
+        ul.cd-side__sub-list
+          each entry in coinsToQuery
+            li.cd-side__sub-item
+              a( href='/'+entry )= entry.toUpperCase()
+          
+
+
+      //li.cd-side__item.cd-side__item--has-children.cd-side__item--comments.js-cd-item--has-children
+        a(href='#0') Comments
+        ul.cd-side__sub-list
+          li.cd-side__sub-item
+            a(href='#0') All Comments
+          li.cd-side__sub-item
+            a(href='#0') Edit Comment
+          li.cd-side__sub-item
+            a(href='#0') Delete Comment
+    //ul.cd-side__list.js-cd-side__list
+      li.cd-side__label
+        span  News
+      li.cd-side__item.cd-side__item--has-children.cd-side__item--bookmarks.js-cd-item--has-children
+        a(href='/news/article') All News
+        ul.cd-side__sub-list
+          //li.cd-side__sub-item
+            a(href='/news/article') Most Polularr
+
+    ul.cd-side__list.js-cd-side__list
+      li.cd-side__label
+        span Check out more:
+      li.cd-side__btn
+        
+        button( onclick="location.href='https://homepage-appsplosion.herokuapp.com/'").reset(href='https://homepage-appsplosion.herokuapp.com/') Appsplosion.com
+  div(style='background-color: #e2e2e2;  margin-left: auto;margin-right: auto; ')
+    <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #e2e2e2; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #e2e2e2;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">by Coinlib</a></div></div>
+    div(style='background-color: #e2e2e2; width:90%; margin-left: auto; margin-right: auto; margin-top: 1vw;')
+      h1(style='') #{coinname.toUpperCase()} 💎
+      .card(style='width: 20rem;  margin-top: 3vw; float:left;  ')
+        .card-body
+          h5.card-title Sentiment Analyis Score from all articles:
+          h6.card-subtitle.mb-2.text-muted #{countOfArticles} articles  
+          h4.card-text #{avg}
+          h6.card-subtitle.mb-2.text-muted -5 to +5
+          //a.card-link(href='#') ?
+        
+      .card(style='width: 20rem;  margin-top: 3vw;   float:left; ')
+        .card-body
+          h5.card-title Analyzed 
+          //h6.card-subtitle.mb-2.text-muted (xx from the last 12 hours)
+          h4.card-text <b>#{countOfArticles}</b> articles
+          //a.card-link(href='#') ?
+
+      .card(style='width: 20rem;  margin-top: 3vw; float:left;  ')
+        .card-body
+          h5.card-title AFINN - How it works:
+          h6.card-subtitle.mb-2.text-muted AFINN is a list of words rated for valence with an integer between minus five (negative) and plus five (positive).
+          //h4.card-text #{avg}
+          //h6.card-subtitle.mb-2.text-muted -8 to +8
+          a.card-link(href='https://www.npmjs.com/package/sentiment#how-it-works') Read more here
+
+      //<div class="cryptohopper-web-widget" data-id="5"></div>
+
+      p(style=' padding-top: 1vw; clear:both;')
+        b  Chart:  
+
+
+      div(id="myDiv")
+      br
+
+      <div id="test1" class="col-sm-12 box"></div>
+
+
+      p(style=' padding-top: 1vw; clear:both;')
+        b weighted Articles: 
+      
+      
+      table#customers(style=' margin-top: 2vw;')
+        tr
+          th Positiv
+          th Negativ
+        tr
+          td
+            p
+              b #{firstpostitive.title}
+            p
+              | #{firstpostitive.desc}
+            a(href=firstpostitive.url) Read more
+          td
+            p
+              b #{firstnegative.title}
+            p
+              | #{firstnegative.desc}
+            a(href=firstnegative.url) Read more
+        tr
+          td
+            p
+              b #{secondpostitive.title}
+            p
+              | #{secondpostitive.desc}
+            a(href=secondpostitive.url) Read more
+          td
+            p
+              b #{secondnegative.title}
+            p
+              | #{secondnegative.desc}
+            a(href=secondnegative.url) Read more
+        tr
+          td
+            p
+              b #{thirdpostitive.title}
+            p
+              | #{thirdpostitive.desc}
+            a(href=thirdpostitive.url) Read more
+          td
+            p
+              b  #{thirdnegative.title}
+            p
+              | #{thirdnegative.desc}
+            a(href='/hier') Read more
+
+      center
+        div(style="margin:10px ;")
+          a( href=twitterurl  class="twitter-hashtag-button"  data-show-count="false" ) Tweet #LoveTwitter
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          
+          <div id="fb-root"></div>
+          <div class="fb-share-button" style="float:center;" data-href="https://cryptodashborad.herokuapp.com/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Teilen</a></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v12.0" nonce="7Jex7e29"></script>
+        
+      #ebxxx.powr-comments
+      script(src='https://www.powr.io/powr.js?platform=html')
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+script.
+
+  // Make a request for a user with a given ID
+
+  axios.get('https://cryptocms.herokuapp.com' + window.location.pathname + "s")
+    .then(function (response) {
+      // handle success
+      console.log(response);
+
+      document.getElementById('test1').innerHTML = response.data.map(entry => 
+      `<div style="align:center; background-color:#d7d7d7; padding: 10px;">
+        <div><b>${entry.title}</b></div>
+        <div>${entry.shorttext}</div>
+        <div style="color:hsl(203deg 79% 44%)">Year: ${entry.year}</div>
+        <div> <b>Prediction:</b> ${entry.predictionprice}</div>
+        <div>Published: ${entry.published_at}</div>
+      </div>
+      <br>
+      `
+    ).join('')
+    })
+    .catch(function (error) {
+      // handle error
+      console.log("err" + error);
+    })
+    .then(function () {
+      // always executed
+    });
+
+    
+
+ timestamps = JSON.parse('!{timestampArray}');
+ scorearray = JSON.parse('!{scoreArray}');
+ titlearray =!{titlearray};
+  console.log(titlearray)
+
+  var trace = {
+    name: 'Avarage',
+    x: timestamps,
+    y: scorearray,
+    mode: 'lines',
+    text: titlearray,
+    line:  {shape: 'vhv'},
+  };
+
+
+  var dottrace = {
+  x: timestamps,
+  y: scorearray,
+  mode: 'markers',
+  name: 'Events',
+  text: titlearray,
+  };
+
+  var data = [ trace , dottrace];
+
+  var layout = {
+    title:'Analyis Score over time',
+    plot_bgcolor:"#e2e2e2",
+    paper_bgcolor:"#e2e2e2",
+    autosize: true,
+    height: 300,
+  };
+
+  Plotly.newPlot('myDiv', data, layout);
+
+
+script(src='assets/js/util.js')
+// util functions included in the CodyHouse framework
+script(src='assets/js/menu-aim.js')
+script(src='assets/js/main.js')
