@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <!-- https://codyhouse.co/license-->
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    document.getElementsByTagName("html")[0].className += " js";
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-  <link rel="e" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link
+    rel="e"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!--Bootrap-->
-  
 
   <title>Responsive Sidebar Navigation | CodyHouse</title>
 
   <style>
-
-
     #customers {
       font-family: Arial, Helvetica, sans-serif;
       border-collapse: collapse;
       width: 100%;
-      border-radius:6px;
-      
+      border-radius: 6px;
     }
-    
-    #customers td, #customers th {
+
+    #customers td,
+    #customers th {
       border: 1px solid #ddd;
       padding: 8px;
     }
-    
-    #customers tr:nth-child(even){background-color: #f2f2f2;}
-    
-    #customers tr:hover {background-color: #ddd;}
-    
+
+    #customers tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+      background-color: #ddd;
+    }
+
     #customers th {
       padding-top: 12px;
       padding-bottom: 12px;
@@ -44,22 +55,36 @@
       background-color: hsl(203deg 79% 44%);
       color: white;
     }
-    </style>
-
-
+  </style>
 </head>
 <header class="cd-main-header js-cd-main-header">
-  <div class="cd-logo-wrapper"><a class="cd-logo" href="#0"><img src="assets/img/cd-logo.svg" alt="Logo"></a></div>
+  <div class="cd-logo-wrapper">
+    <a class="cd-logo" href="#0"
+      ><img src="assets/img/cd-logo.svg" alt="Logo"
+    /></a>
+  </div>
   <div class="cd-search js-cd-search">
     <form>
-      <input class="reset" type="search" placeholder="Search...">
+      <input class="reset" type="search" placeholder="Search..." />
     </form>
   </div>
-  <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+  <button
+    class="reset cd-nav-trigger js-cd-nav-trigger"
+    aria-label="Toggle menu"
+  >
+    <span></span>
+  </button>
   <ul class="cd-nav__list js-cd-nav__list">
     <li class="cd-nav__item"><a href="#0">Tour</a></li>
     <li class="cd-nav__item"><a href="#0">Support</a></li>
-    <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children"><a href="#0"><img src="assets/img/cd-avatar.svg" alt="avatar"><span>Account</span></a>
+    <li
+      class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children"
+    >
+      <a href="#0"
+        ><img src="assets/img/cd-avatar.svg" alt="avatar" /><span
+          >Account</span
+        ></a
+      >
       <ul class="cd-nav__sub-list">
         <li class="cd-nav__sub-item"><a href="#0">My Account</a></li>
         <li class="cd-nav__sub-item"><a href="#0">Edit Account</a></li>
@@ -73,21 +98,32 @@
   <nav class="cd-side-nav js-cd-side-nav">
     <ul class="cd-side__list js-cd-side__list">
       <li class="cd-side__label"><span>Main</span></li>
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--overview js-cd-item--has-children"><a href="#0">Overview</a>
+      <li
+        class="cd-side__item cd-side__item--has-children cd-side__item--overview js-cd-item--has-children"
+      >
+        <a href="#0">Overview</a>
         <ul class="cd-side__sub-list">
           <li class="cd-side__sub-item"><a href="#0">All Data</a></li>
           <li class="cd-side__sub-item"><a href="#0">Category 1</a></li>
           <li class="cd-side__sub-item"><a href="#0">Category 2</a></li>
         </ul>
       </li>
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--notifications cd-side__item--selected js-cd-item--has-children"><a href="#0">Notifications<span class="cd-count">3</span></a>
+      <li
+        class="cd-side__item cd-side__item--has-children cd-side__item--notifications cd-side__item--selected js-cd-item--has-children"
+      >
+        <a href="#0">Notifications<span class="cd-count">3</span></a>
         <ul class="cd-side__sub-list">
-          <li class="cd-side__sub-item"><a aria-current="page" href="#0">All Notifications</a></li>
+          <li class="cd-side__sub-item">
+            <a aria-current="page" href="#0">All Notifications</a>
+          </li>
           <li class="cd-side__sub-item"><a href="#0">Friends</a></li>
           <li class="cd-side__sub-item"><a href="#0">Other</a></li>
         </ul>
       </li>
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--comments js-cd-item--has-children"><a href="#0">Comments</a>
+      <li
+        class="cd-side__item cd-side__item--has-children cd-side__item--comments js-cd-item--has-children"
+      >
+        <a href="#0">Comments</a>
         <ul class="cd-side__sub-list">
           <li class="cd-side__sub-item"><a href="#0">All Comments</a></li>
           <li class="cd-side__sub-item"><a href="#0">Edit Comment</a></li>
@@ -97,20 +133,29 @@
     </ul>
     <ul class="cd-side__list js-cd-side__list">
       <li class="cd-side__label"><span>Secondary</span></li>
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--bookmarks js-cd-item--has-children"><a href="#0">Bookmarks</a>
+      <li
+        class="cd-side__item cd-side__item--has-children cd-side__item--bookmarks js-cd-item--has-children"
+      >
+        <a href="#0">Bookmarks</a>
         <ul class="cd-side__sub-list">
           <li class="cd-side__sub-item"><a href="#0">All Bookmarks</a></li>
           <li class="cd-side__sub-item"><a href="#0">Edit Bookmark</a></li>
           <li class="cd-side__sub-item"><a href="#0">Import Bookmark</a></li>
         </ul>
       </li>
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--images js-cd-item--has-children"><a href="#0">Images</a>
+      <li
+        class="cd-side__item cd-side__item--has-children cd-side__item--images js-cd-item--has-children"
+      >
+        <a href="#0">Images</a>
         <ul class="cd-side__sub-list">
           <li class="cd-side__sub-item"><a href="#0">All Images</a></li>
           <li class="cd-side__sub-item"><a href="#0">Edit Image</a></li>
         </ul>
       </li>
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--users js-cd-item--has-children"><a href="#0">Users</a>
+      <li
+        class="cd-side__item cd-side__item--has-children cd-side__item--users js-cd-item--has-children"
+      >
+        <a href="#0">Users</a>
         <ul class="cd-side__sub-list">
           <li class="cd-side__sub-item"><a href="#0">All Users</a></li>
           <li class="cd-side__sub-item"><a href="#0">Edit User</a></li>
@@ -126,29 +171,41 @@
     </ul>
   </nav>
 
-  <div style="background-color: #e2e2e2;  margin-left: auto;margin-right: auto; ">
-    <div style="background-color: #e2e2e2; width:90%; margin-left: auto; margin-right: auto; margin-top: 1vw;">
-      <h1  style="padding-top: 2vh;" >Coinname</h1>
+  <div style="background-color: #e2e2e2; margin-left: auto; margin-right: auto">
+    <div
+      style="
+        background-color: #e2e2e2;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1vw;
+      "
+    >
+      <h1 style="padding-top: 2vh">Coinname</h1>
 
-      <div class="card" style="width: 18rem;  margin-top: 3vw; float:left;  ">
+      <div class="card" style="width: 18rem; margin-top: 3vw; float: left">
         <div class="card-body">
           <h5 class="card-title">Sentiment Analyis Score from all articles:</h5>
-          <h6 class="card-subtitle mb-2 text-muted">(14 from the last 12 hours)</h6>
-          <h4 class="card-text">-3.89</h4 >
+          <h6 class="card-subtitle mb-2 text-muted">
+            (14 from the last 12 hours)
+          </h6>
+          <h4 class="card-text">-3.89</h4>
           <a href="#" class="card-link">?</a>
         </div>
       </div>
 
-      <div class="card" style="width: 18rem;  margin-top: 3vw; float:left; ">
+      <div class="card" style="width: 18rem; margin-top: 3vw; float: left">
         <div class="card-body">
           <h5 class="card-title">Our Analyis Score from all articles:</h5>
-          <h6 class="card-subtitle mb-2 text-muted">(14 from the last 12 hours)</h6>
-          <h4 class="card-text">-3.89</h4 >
+          <h6 class="card-subtitle mb-2 text-muted">
+            (14 from the last 12 hours)
+          </h6>
+          <h4 class="card-text">-3.89</h4>
           <a href="#" class="card-link">?</a>
         </div>
       </div>
 
-      <p style=" padding-top: 1vw; clear:both;"><b> Articles:  </b></p>
+      <p style="padding-top: 1vw; clear: both"><b> Articles: </b></p>
       <ul>
         <!--each entry in articlesData
         li= entry.title
@@ -159,50 +216,84 @@
         -->
       </ul>
 
-    
-    <table  style=" margin-top: 3vw;" id="customers">
+      <table style="margin-top: 3vw" id="customers">
         <tr>
-        <th>Positiv</th>
-        <th>Negativ</th>
+          <th>Positiv</th>
+          <th>Negativ</th>
         </tr>
         <tr>
-            <td>
-                <p><b>Title</b></p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
-                <a href="/hier">Read more</a>
-            </td>
-            <td>
-                <p><b>Title</b></p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
-                <a href="/hier">Read more</a>
-            </td>
+          <td>
+            <p><b>Title</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+            </p>
+            <a href="/hier">Read more</a>
+          </td>
+          <td>
+            <p><b>Title</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+            </p>
+            <a href="/hier">Read more</a>
+          </td>
         </tr>
         <tr>
-            <td>
-                <p><b>Title</b></p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
-                <a href="/hier">Read more</a>
-            </td>
-            <td>
-                <p><b>Title</b></p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
-                <a href="/hier">Read more</a>
-            </td>
+          <td>
+            <p><b>Title</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+            </p>
+            <a href="/hier">Read more</a>
+          </td>
+          <td>
+            <p><b>Title</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+            </p>
+            <a href="/hier">Read more</a>
+          </td>
         </tr>
         <tr>
-            <td>
-                <p><b>Title</b></p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
-                <a href="/hier">Read more</a>
-            </td>
-            <td>
-                <p><b>Title</b></p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
-                <a href="/hier">Read more</a>
-            </td>
+          <td>
+            <p><b>Title</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+            </p>
+            <a href="/hier">Read more</a>
+          </td>
+          <td>
+            <p><b>Title</b></p>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+            </p>
+            <a href="/hier">Read more</a>
+          </td>
         </tr>
-    </table>
-
+      </table>
     </div>
   </div>
 </main>

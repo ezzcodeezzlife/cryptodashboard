@@ -1,5 +1,5 @@
-@import '../../../../codyhouse-framework/main/assets/css/style.scss'; // ⚠️ make sure to import the CodyHouse framework
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'); // custom font
+@import "../../../../codyhouse-framework/main/assets/css/style.scss"; // ⚠️ make sure to import the CodyHouse framework
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"); // custom font
 
 // --------------------------------
 
@@ -11,8 +11,8 @@
   // colors
   @include defineColorHSL(--cd-color-1, 210, 10%, 27%); // Mako
   @include defineColorHSL(--cd-color-2, 203, 79%, 44%); // Denim
-  @include defineColorHSL(--cd-color-3, 0, 0%, 100%);   // White
-  @include defineColorHSL(--cd-color-4, 9, 100%, 70%);  // Salmon
+  @include defineColorHSL(--cd-color-3, 0, 0%, 100%); // White
+  @include defineColorHSL(--cd-color-4, 9, 100%, 70%); // Salmon
 
   // header
   --cd-header-height: 45px;
@@ -21,13 +21,13 @@
   --cd-sidebar-width: 100%;
 
   // font
-  --font-primary: 'Open Sans', sans-serif;
+  --font-primary: "Open Sans", sans-serif;
 }
 
-@supports(--css: variables) {
+@supports (--css: variables) {
   :root {
     @include breakpoint(md) {
-      --cd-header-height:  55px;
+      --cd-header-height: 55px;
       --cd-sidebar-width: 200px;
     }
   }
@@ -38,7 +38,7 @@ body {
 }
 
 a {
-	color: var(--cd-color-2);
+  color: var(--cd-color-2);
 }
 
 // main content
@@ -53,7 +53,7 @@ a {
 
 .cd-content-wrapper {
   padding: var(--space-xl) var(--space-md);
-  
+
   @include breakpoint(md) {
     h1 {
       font-weight: 300;
@@ -63,13 +63,13 @@ a {
 
 // header
 .cd-main-header {
-	position: relative;
-	z-index: var(--zindex-fixed-element);
-	height: var(--cd-header-height);
+  position: relative;
+  z-index: var(--zindex-fixed-element);
+  height: var(--cd-header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-	background: var(--cd-color-1);
+  background: var(--cd-color-1);
   box-shadow: var(--shadow-sm);
   @include fontSmooth;
 
@@ -80,10 +80,10 @@ a {
   &::before {
     /* never visible - used to check MQ in JS */
     display: none;
-    content: 'mobile';
+    content: "mobile";
   }
 
-	@include breakpoint(md) {
+  @include breakpoint(md) {
     position: fixed;
     justify-content: flex-start;
     top: 0;
@@ -92,7 +92,7 @@ a {
     z-index: var(--zindex-fixed-element);
 
     &::before {
-      content: 'desktop';
+      content: "desktop";
     }
   }
 }
@@ -109,11 +109,11 @@ a {
 }
 
 .cd-logo {
-	display: block;
+  display: block;
   margin: 0 var(--space-md);
 
-	img {
-		display: block;
+  img {
+    display: block;
   }
 
   @include breakpoint(md) {
@@ -121,52 +121,65 @@ a {
   }
 }
 
-.cd-nav-trigger { // navigation trigger - visible only on small devices
-	position: relative;
-	display: block;
-	width: 32px;
-	height: var(--cd-header-height);
-	margin-right: var(--space-md);
+.cd-nav-trigger {
+  // navigation trigger - visible only on small devices
+  position: relative;
+  display: block;
+  width: 32px;
+  height: var(--cd-header-height);
+  margin-right: var(--space-md);
 
-	span, span::before, span::after { // menu icon
-		position: absolute;
-		height: 3px;
-		width: 24px;
-		background: var(--cd-color-3);
-	}
+  span,
+  span::before,
+  span::after {
+    // menu icon
+    position: absolute;
+    height: 3px;
+    width: 24px;
+    background: var(--cd-color-3);
+  }
 
-	span { // line in the center
-		top: calc(50% - 2px);
-		right: 4px;
-    transition: background .2s;
-	}
+  span {
+    // line in the center
+    top: calc(50% - 2px);
+    right: 4px;
+    transition: background 0.2s;
+  }
 
-	span::before, span::after { // other 2 lines
-		content: '';
-		right: 0;
+  span::before,
+  span::after {
+    // other 2 lines
+    content: "";
+    right: 0;
     transform-origin: 0 50%;
-    transition: transform .2s;
-	}
+    transition: transform 0.2s;
+  }
 
-	span::before { // menu icon top line
-		top: -6px;
-	}
+  span::before {
+    // menu icon top line
+    top: -6px;
+  }
 
-	span::after { // menu icon bottom line
-		top: 6px;
-	}
+  span::after {
+    // menu icon bottom line
+    top: 6px;
+  }
 
-	@include breakpoint(md) {
-		display: none; // hide on bigger devices
-	}
+  @include breakpoint(md) {
+    display: none; // hide on bigger devices
+  }
 }
 
-.cd-nav-trigger--nav-is-visible { // icon animation
-  span { // hide line in the center
+.cd-nav-trigger--nav-is-visible {
+  // icon animation
+  span {
+    // hide line in the center
     background: alpha(var(--cd-color-3), 0);
   }
 
-  span::before, span::after { // make sure other 2 lines are visible
+  span::before,
+  span::after {
+    // make sure other 2 lines are visible
     background: alpha(var(--cd-color-3), 1);
   }
 
@@ -180,79 +193,83 @@ a {
 }
 
 .cd-search {
-	position: relative;
-	margin: var(--space-sm) var(--space-md) 0;
+  position: relative;
+  margin: var(--space-sm) var(--space-md) 0;
 
-	&::before { // lens icon
-		content: '';
-		position: absolute;
+  &::before {
+    // lens icon
+    content: "";
+    position: absolute;
     left: 12px;
     top: calc(50% - 8px);
-		height: 16px;
-		width: 16px;
-		background: url('../img/cd-search.svg') no-repeat 0 0;
-	}
+    height: 16px;
+    width: 16px;
+    background: url("../img/cd-search.svg") no-repeat 0 0;
+  }
 
-	input {
-		padding: 0 16px 0 36px;
-		width: 100%;
-		height: 36px;
-    border-radius: .25em;
+  input {
+    padding: 0 16px 0 36px;
+    width: 100%;
+    height: 36px;
+    border-radius: 0.25em;
     background-color: var(--cd-color-3);
-	}
+  }
 
-	@include breakpoint(md) {
-		display: block;
-		width: 250px;
-		height: 100%;
+  @include breakpoint(md) {
+    display: block;
+    width: 250px;
+    height: 100%;
     margin: 0;
     border-left: 1px solid lightness(var(--cd-color-1), 1.2);
 
-		&::before { // icon
-			background-position: 0 -16px;
-		}
+    &::before {
+      // icon
+      background-position: 0 -16px;
+    }
 
-		form, input {
-			height: 100%;
-			width: 100%;
-		}
+    form,
+    input {
+      height: 100%;
+      width: 100%;
+    }
 
-		input {
-			border-radius: 0;
-			background-color: transparent;
+    input {
+      border-radius: 0;
+      background-color: transparent;
       color: var(--cd-color-3);
       font-size: 0.875em;
-		}
-	}
+    }
+  }
 }
 
 // sidebar navigation
 .cd-side-nav {
-	position: absolute;
-	z-index: var(--zindex-header);
-	left: 0;
-	top: var(--cd-header-height);
-	width: var(--cd-sidebar-width);
+  position: absolute;
+  z-index: var(--zindex-header);
+  left: 0;
+  top: var(--cd-header-height);
+  width: var(--cd-sidebar-width);
   padding-bottom: var(--space-md);
   background-color: lightness(var(--cd-color-1), 0.7);
   box-shadow: var(--shadow-md);
   @include fontSmooth;
-  transition: .2s;
-	visibility: hidden;
-	opacity: 0;
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
 
   a {
     text-decoration: none;
   }
 
-	@include breakpoint(md) { // move to the side
+  @include breakpoint(md) {
+    // move to the side
     position: relative;
     top: auto;
-		visibility: visible;
+    visibility: visible;
     opacity: 1;
     box-shadow: none;
     transition: none;
-	}
+  }
 }
 
 .cd-side-nav--is-visible {
@@ -260,7 +277,9 @@ a {
   visibility: visible;
 }
 
-.cd-side__item, .cd-nav__item { // side items and nav items are identical on smaller screens
+.cd-side__item,
+.cd-nav__item {
+  // side items and nav items are identical on smaller screens
   font-size: 0.875em;
   position: relative;
 
@@ -278,12 +297,13 @@ a {
   }
 }
 
-.cd-side__item > a::before { // left icon
-  content: '';
+.cd-side__item > a::before {
+  // left icon
+  content: "";
   height: 16px;
   width: 16px;
   margin-right: var(--space-xs);
-  background: url('../img/cd-nav-icons.svg') no-repeat 0 0;
+  background: url("../img/cd-nav-icons.svg") no-repeat 0 0;
 }
 
 .cd-side__item {
@@ -329,26 +349,30 @@ a {
   background-position: -16px 0;
 }
 
-.cd-side__item--has-children, .cd-nav__item--has-children {
-	> a::after { // arrow icon
-    content: '';
-		position: absolute;
+.cd-side__item--has-children,
+.cd-nav__item--has-children {
+  > a::after {
+    // arrow icon
+    content: "";
+    position: absolute;
     top: calc(50% - 8px);
-		height: 16px;
-		width: 16px;
-		right: var(--space-md);
-		background: url('../img/cd-arrow.svg');
-	}
+    height: 16px;
+    width: 16px;
+    right: var(--space-md);
+    background: url("../img/cd-arrow.svg");
+  }
 
-	@include breakpoint(md) {
-		> a::after { // hide icon
-			display: none;
+  @include breakpoint(md) {
+    > a::after {
+      // hide icon
+      display: none;
     }
-	}
+  }
 }
 
 .cd-side__item--has-children {
-  @include breakpoint(md) { // show menu on :hover if item has children
+  @include breakpoint(md) {
+    // show menu on :hover if item has children
     &:not(.cd-side__item--selected).hover .cd-side__sub-list {
       display: block;
       position: absolute;
@@ -361,23 +385,29 @@ a {
   }
 }
 
-.cd-side__item--expanded { // item clicked on - trigger sub nav visibility on small devices
-  .cd-side__sub-list, .cd-nav__sub-list { // show sub nav on small screens if item is clicked on
+.cd-side__item--expanded {
+  // item clicked on - trigger sub nav visibility on small devices
+  .cd-side__sub-list,
+  .cd-nav__sub-list {
+    // show sub nav on small screens if item is clicked on
     display: block;
   }
 
-	> a::after {
+  > a::after {
     transform: rotate(180deg);
   }
 
   @include breakpoint(md) {
-    .cd-side__sub-list, .cd-nav__sub-list { // hide sub nav on bigger devices (it's visible as menu on :hover)
+    .cd-side__sub-list,
+    .cd-nav__sub-list {
+      // hide sub nav on bigger devices (it's visible as menu on :hover)
       display: none;
     }
   }
 }
 
-.cd-side__item--selected { // selected item
+.cd-side__item--selected {
+  // selected item
   > a {
     box-shadow: inset 3px 0 0 var(--cd-color-2);
     background-color: alpha(var(--cd-color-3), 0.05);
@@ -390,13 +420,14 @@ a {
   }
 }
 
-.cd-side__sub-list, .cd-nav__sub-list {
+.cd-side__sub-list,
+.cd-nav__sub-list {
   background-color: lightness(var(--cd-color-1), 0.45);
   display: none;
 }
 
 .cd-side__sub-item {
-  a[aria-current='page'] {
+  a[aria-current="page"] {
     color: var(--cd-color-4);
   }
 
@@ -415,7 +446,7 @@ a {
     font-weight: bold;
     font-size: 0.65em;
     color: alpha(var(--cd-color-3), 0.4);
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
   }
 
   @include breakpoint(md) {
@@ -427,7 +458,8 @@ a {
   }
 }
 
-.cd-count { // notification badge
+.cd-count {
+  // notification badge
   position: absolute;
   right: calc(var(--space-md) + 16px + var(--space-sm));
   top: 50%;
@@ -435,7 +467,7 @@ a {
   padding: var(--space-xxs) var(--space-xs);
   line-height: 1;
   background-color: var(--cd-color-4);
-  border-radius: .25em;
+  border-radius: 0.25em;
 
   color: var(--cd-color-3);
   font-weight: bold;
@@ -447,15 +479,15 @@ a {
 }
 
 .cd-side__btn {
-  margin: var(--space-xs) var(--space-md); 
+  margin: var(--space-xs) var(--space-md);
 
   button {
     display: block;
     width: 100%;
     padding: var(--space-sm) 0;
     background-color: var(--cd-color-2);
-    border-radius: .25em;
-    box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(#fff, .2);
+    border-radius: 0.25em;
+    box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(#fff, 0.2);
     text-align: center;
     color: var(--cd-color-3);
     font-weight: bold;
@@ -472,13 +504,13 @@ a {
 
 // navigation
 .cd-nav__list {
-	@include breakpoint(md) {
+  @include breakpoint(md) {
     font-size: 0.75em;
     height: var(--cd-header-height);
     margin-left: auto;
     display: flex;
     align-items: center;
-	}
+  }
 }
 
 .cd-nav__item {
@@ -491,7 +523,7 @@ a {
     &:last-of-type {
       margin-right: 0;
     }
-    
+
     a {
       font-size: 1.1em;
       color: var(--cd-color-3);
@@ -506,7 +538,8 @@ a {
 }
 
 .cd-nav__item--account {
-  img { // avatar image
+  img {
+    // avatar image
     display: none;
   }
 
